@@ -1,0 +1,17 @@
+[
+  {
+    "code": "1.1.1.1",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo corriente",
+      "tertiary": "Caja y banco"
+    },
+    "name": "Caja",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando ingresa dinero en efectivo.",
+      "creditor": "Cuando egresa dinero en efectivo."
+    },
+    "represents": "Dinero existente en caja."
+  }
+]

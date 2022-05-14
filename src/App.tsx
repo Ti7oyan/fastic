@@ -1,7 +1,7 @@
-// import { useState } from 'react';
 import {
-  AppShell, Global, MantineProvider, Text,
+  AppShell, ColorSchemeProvider, Global, MantineProvider, Title,
 } from '@mantine/core';
+import useTheme from './hooks/useTheme';
 
 // Fonts
 import light from '@/assets/fonts/Poppins-Light.woff2';
@@ -13,8 +13,10 @@ import semiBold from '@/assets/fonts/Poppins-SemiBold.woff2';
 import Header from '@/components/Header';
 
 function App() {
+  const [theme, toggleTheme] = useTheme();
+
   return (
-    <>
+    <ColorSchemeProvider colorScheme={theme} toggleColorScheme={toggleTheme}>
       <Global
         styles={[
           {
@@ -51,7 +53,7 @@ function App() {
         withNormalizeCSS
         withGlobalStyles
         theme={{
-          colorScheme: 'light',
+          colorScheme: theme,
           fontFamily: 'Poppins, sans-serif',
           colors: {
             brand: ['#FCA311', '#14213D', '#E5E5E5'],
@@ -61,10 +63,10 @@ function App() {
         <AppShell
           header={<Header />}
         >
-          <Text>HOla</Text>
+          <Title>Fastic</Title>
         </AppShell>
       </MantineProvider>
-    </>
+    </ColorSchemeProvider>
   );
 }
 
