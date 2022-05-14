@@ -1,92 +1,52 @@
 import {
-  Anchor, ActionIcon, Container, createStyles, Group, Title, Tooltip,
+  Anchor, Container, createStyles, Group, Title, Tooltip,
 } from '@mantine/core';
+import { Link } from 'react-router-dom';
 import { Github } from 'styled-icons/boxicons-logos';
-import { Zap, Sun, Moon } from 'styled-icons/boxicons-solid';
-import useTheme from '@/hooks/useTheme';
+import { Zap } from 'styled-icons/boxicons-solid';
 
 const useStyles = createStyles((theme) => ({
+  container: {
+    position: 'fixed',
+    top: 0,
+    width: '100%',
+    borderBottom: '1px solid',
+    borderBottomColor: theme.colors.brand[0],
+    backgroundColor: theme.black,
+  },
+
+  return: {
+    color: 'inherit',
+    textDecoration: 'none',
+  },
+
   title: {
     display: 'flex',
     alignItems: 'center',
     fontFamily: theme.fontFamily,
   },
 
-  zap: {
-    marginInlineStart: '.25rem',
-  },
-
-  container: {
-    borderBottom: '1px solid',
-    borderBottomColor: theme.colorScheme === 'light' ? theme.black : theme.colors.brand[0],
-    backgroundColor: theme.colorScheme === 'light' ? theme.colors.brand[0] : theme.black,
-  },
-
   content: {
     display: 'flex',
     padding: '.5rem',
     justifyContent: 'space-between',
-    color: theme.colorScheme === 'light' ? theme.black : theme.colors.brand[0],
+    color: theme.colors.brand[0],
+  },
+
+  zap: {
+    marginInlineStart: '.25rem',
   },
 
   github: {
-    color: theme.colorScheme === 'light' ? theme.black : theme.colors.brand[0],
+    color: theme.colors.brand[0],
     transition: '.15s color',
 
     '&:hover': {
-      color: theme.colors.orange[9],
+      color: theme.colors.orange[5],
     },
   },
 
-  sun: {
-    color: theme.colors.orange[4],
-    transition: '.15s all',
-
-    '&:hover': {
-      color: theme.colors.orange[6],
-    },
-  },
-
-  moon: {
-    color: theme.colors.gray[8],
-    transition: '.15s all',
-
-    '&:hover': {
-      color: theme.colors.gray[6],
-    },
-  },
 }));
-
-function Switch() {
-  const [colorTheme, toggleTheme] = useTheme();
-  const { classes } = useStyles();
-
-  return (
-    <ActionIcon
-      onClick={toggleTheme}
-      sx={{
-        backgroundColor: 'transparent',
-        '&:hover': {
-          backgroundColor: 'transparent',
-        },
-      }}
-    >
-      {colorTheme === 'dark'
-        ? (
-          <Sun
-            size={28}
-            className={classes.sun}
-          />
-        )
-        : (
-          <Moon
-            size={28}
-            className={classes.moon}
-          />
-        )}
-    </ActionIcon>
-  );
-}
 
 function Header() {
   const { classes } = useStyles();
@@ -97,15 +57,16 @@ function Header() {
       fluid
     >
       <Group className={classes.content}>
-        <Title
-          className={classes.title}
-        >
-          Fastic
-          <Zap size={28} className={classes.zap} />
-        </Title>
+        <Link to="/" className={classes.return}>
+          <Title
+            className={classes.title}
+          >
+            Fastic
+            <Zap size={28} className={classes.zap} />
+          </Title>
+        </Link>
 
         <Group>
-          <Switch />
 
           <Tooltip
             position="bottom"
