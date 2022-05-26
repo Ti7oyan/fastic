@@ -1,0 +1,617 @@
+[
+  {
+    "code": "1.1.1.1",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo corriente",
+      "tertiary": "Caja y banco"
+    },
+    "name": "Caja",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando ingresa dinero en efectivo.",
+      "creditor": "Cuando egresa dinero en efectivo."
+    },
+    "represents": "Dinero existente en caja."
+  },
+  {
+    "code": "1.1.1.2",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo corriente",
+      "tertiary": "Caja y banco"
+    },
+    "name": "Fondo fijo",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Al constituirse el fondo fijo diario y al reponer el mismo al dia siguiente",
+      "creditor": "Cuando registramos los gastos pagados con dinero del fondo fijo."
+    },
+    "represents": "Importe del Fondo Fijo al constituirse o el importe pendiente de utilización una vez registrados los gastos."
+  },
+  {
+    "code": "1.1.1.3",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo corriente",
+      "tertiary": "Caja y banco"
+    },
+    "name": "Banco cuenta corriente",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando ingresa dinero u otros valores a la cuenta corriente a través depósitos.",
+      "creditor": "Cuando emitimos cheques hacia 3º, por cajero, débito automático, transferencia u otras formas de pago electrónico. También cuando se nos cobran los gastos, comisiones, intereses o sellados bancarios."
+    },
+    "represents": "Importe del dinero depositado en una cuenta corriente en el banco a nuestro favor."
+  },
+  {
+    "code": "1.1.1.4",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo corriente",
+      "tertiary": "Caja y banco"
+    },
+    "name": "Valores a depositar",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando ingresan cheques recibidos de terceros.",
+      "creditor": "Cuando endosamos cheques de terceros a una entidad bancaria o los entregamos como forma de pago a terceros."
+    },
+    "represents": "Cheques de terceros en nuestro poder."
+  },
+  {
+    "code": "1.1.1.5",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo corriente",
+      "tertiary": "Caja y banco"
+    },
+    "name": "Banco caja de ahorro",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando depositamos dinero en c/a para utilizarlo con tarjeta de débito y cuando el Banco nos agrega los intereses.",
+      "creditor": "Cuando extraemos total o parcialmente los fondos depositados y por los gastos de mantenimiento de la cuenta."
+    },
+    "represents": "Importe depositado en la caja de ahorro del Banco."
+  },
+  {
+    "code": "1.1.2.1",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo corriente",
+      "tertiary": "Inversiones"
+    },
+    "name": "Banco Plazo fijo",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando se realiza el depósito de dinero a plazo fijo en el banco más los intereses generados en dicho período de tiempo.",
+      "creditor": "Cuando se retira el dinero del banco más los intereses al fin del plazo o bien se renueva por un nuevo período."
+    },
+    "represents": "Dinero que tenemos invertido en plazo fijo."
+  },
+  {
+    "code": "1.1.2.2",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo corriente",
+      "tertiary": "Inversiones"
+    },
+    "name": "Moneda extranjera",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando compramos moneda de otros países al valor nominal de las mismas.",
+      "creditor": "Cuando vendemos o cambiamos monedas de otros países."
+    },
+    "represents": "Importe de divisas (moneda de otros países) que poseemos."
+  },
+  {
+    "code": "1.1.2.3",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo corriente",
+      "tertiary": "Inversiones"
+    },
+    "name": "Títulos públicos",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando compramos deudas del Estado  por su valor nominal.",
+      "creditor": "Cuando vendemos o cambiamos los titulos con el Estado"
+    },
+    "represents": "Importe de titulos publicos que poseemos."
+  },
+  {
+    "code": "1.1.2.4",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo corriente",
+      "tertiary": "Inversiones"
+    },
+    "name": "Acciones",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando compramos acciones a SA  por su valor nominal.",
+      "creditor": "Cuando vendemos o cambiamos las acciones."
+    },
+    "represents": "Importe de las acciones que poseemos."
+  },
+  {
+    "code": "1.1.2.5",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo corriente",
+      "tertiary": "Inversiones"
+    },
+    "name": "Previsión para la desvalorización de moneda extranjera/títulos públicos",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Cuando se produce la desvalorización en la cotización de la moneda extranjera, títulos públicos, acciones, etc.",
+      "creditor": "Al constituir la previsión por la desvalorización de los títulos públicos, acciones, moneda extranjera, etc."
+    },
+    "represents": "Saldo sin utilizar de la previsión constituida sobre acciones, títulos públicos, moneda extranjera, etc. (Resta al rubro Inversiones)"
+  },
+  {
+    "code": "1.1.3.1",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo corriente",
+      "tertiary": "Créditos por Ventas"
+    },
+    "name": "Deudores por ventas",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando nos deben dinero por la venta de mercadería en cuenta corriente, a crédito o a plazo.",
+      "creditor": "Cuando cobramos total o parcialmente los importes que nos deben en cuenta corriente o nos documentan lo adeudado."
+    },
+    "represents": "Importe que nos deben los clientes por ventas de bienes de cambio en cuenta corriente."
+  },
+  {
+    "code": "1.1.3.2",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo corriente",
+      "tertiary": "Créditos por Ventas"
+    },
+    "name": "Documentos a cobrar",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando recibimos un pagare de terceros o a nuestro favor.",
+      "creditor": "Cuando cobramos el documento."
+    },
+    "represents": "Importe de documentos a cobrar, aun no vencidos"
+  },
+  {
+    "code": "1.1.3.3",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo corriente",
+      "tertiary": "Créditos por Ventas"
+    },
+    "name": "Tarjeta de crédito a cobrar",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Al efectuar ventas a plazo con tarjeta de crédito.",
+      "creditor": "Cuando depositamos los cupones para su cobro o recibimos la información bancaria que se acredita el importe de la liquidación en nuestra cuenta corriente o caja de ahorro bancaria."
+    },
+    "represents": "Cupones provenientes de las ventas realizadas a terceros con tarjeta de crédito."
+  },
+  {
+    "code": "1.1.3.4",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo corriente",
+      "tertiary": "Créditos por Ventas"
+    },
+    "name": "Deudores morosos",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Clientes que se han atrasado en los pagos a crédito.",
+      "creditor": "Cuando nos pagan lo que nos deben; cuando promovemos un juicio para tratar de recuperar lo que nos deben o al pasar al deudor a la condición de \" incobrable\"."
+    },
+    "represents": "Importe atrasados en el pago de nuestros deudores por venta."
+  },
+  {
+    "code": "1.1.3.5",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo corriente",
+      "tertiary": "Créditos por Ventas"
+    },
+    "name": "Deudores en gestión judicial",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Por el importe de los montos adeudados que se encuentran en vías judicial o en manos de abogados.",
+      "creditor": "Cuando nos abonan lo que nos adeudan o al declarar \"incobrables\" a estos deudores."
+    },
+    "represents": "Importe que nos deben estos deudores en juicio."
+  },
+  {
+    "code": "1.1.3.6",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo corriente",
+      "tertiary": "Créditos por Ventas"
+    },
+    "name": "Documentos descontados",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Cuando el firmante cancela su obligación en la empresa o en el banco donde fueron descontados o cuando en caso de incumplimiento de éste, el Banco descuenta el monto de los fondos en c/c",
+      "creditor": "Cuando descontamos los pagarés de 3º en el Banco o compañías financieras."
+    },
+    "represents": "Importe de los documentos descontados en el banco (Resta al rubro Créditos por ventas)."
+  },
+  {
+    "code": "1.1.3.7",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo corriente",
+      "tertiary": "Créditos por Ventas"
+    },
+    "name": "Previsión para deudores incobrables",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Cuando ocurre el evento de la incobrabilidad de algún deudor o documento.",
+      "creditor": "Cuando se calcula el monto de la previsión para deudores para el EE siguiente."
+    },
+    "represents": "Importe de previsión para futuras incobrabilidades en deudores (Resta al rubro Créditos por ventas)."
+  },
+  {
+    "code": "1.1.4.1",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo corriente",
+      "tertiary": "Otros Créditos"
+    },
+    "name": "Deudores Varios",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando alguien nos debe por venta de conceptos varios.",
+      "creditor": "Cuando cobramos la deuda o nos la documentan."
+    },
+    "represents": "Deudas sin documentar en cuenta corriente por conceptos varios."
+  },
+  {
+    "code": "1.1.4.2",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo corriente",
+      "tertiary": "Otros Créditos"
+    },
+    "name": "Socio cuenta aporte",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Por el compromiso de aporte de los socios a la empresa",
+      "creditor": "Cuando se hace la integración del aporte por parte de los socios a la empresa"
+    },
+    "represents": "Indica el total del importe que se compromete a aportar el socio a la empresa."
+  },
+  {
+    "code": "1.1.4.3",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo corriente",
+      "tertiary": "Otros Créditos"
+    },
+    "name": "Accionistas",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Por el importe de las acciones que los accionistas se comprometen a integrar a una SA.",
+      "creditor": "Por el aporte de los accionistas a la sociedad anónima."
+    },
+    "represents": "Es el importe que aún deben ingresar los accionistas a la SA"
+  },
+  {
+    "code": "1.1.4.4",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo corriente",
+      "tertiary": "Otros Créditos"
+    },
+    "name": "Saldo IVA (D)",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Por el importe a favor del Saldo IVA mensual.",
+      "creditor": "Cuando utilizamos el saldo a favor para pagar saldo de IVA en contra."
+    },
+    "represents": "Saldo total a favor de IVA que tiene un comerciante en sus operaciones mensuales."
+  },
+  {
+    "code": "1.1.4.5",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo corriente",
+      "tertiary": "Otros Créditos"
+    },
+    "name": "Motivo a cobrar",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando nace el derecho de cobro a 3º por el motivo especificado.",
+      "creditor": "Cuando cobramos el importe que nos adeudan total o parcialmente."
+    },
+    "represents": "Importe que 3º nos deben por un motivo especifico."
+  },
+  {
+    "code": "1.1.4.6",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo corriente",
+      "tertiary": "Otros Créditos"
+    },
+    "name": "Motivos pagados por adelantado",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "cuando nace el derecho de cobro a 3º por los motivos especificados y aún no han sido devengados.",
+      "creditor": "Al registrar la pérdida a medida que lo pagado por adelantado deja de ser un crédito a favor."
+    },
+    "represents": "Importe especifico que se encuentra abonado por adelantado."
+  },
+  {
+    "code": "1.1.5.1",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo corriente",
+      "tertiary": "Bienes de Cambio"
+    },
+    "name": "Mercaderías",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando compramos mercadería destinada a la venta.",
+      "creditor": "Cuando registramos el costo de las mercaderías vendidas."
+    },
+    "represents": "Es el valor en dinero de las mercaderías de reventa en existencia."
+  },
+  {
+    "code": "1.1.5.2",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo corriente",
+      "tertiary": "Bienes de Cambio"
+    },
+    "name": "Previsión para la desvalorización de bienes de cambio",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Cuando se produce la desvalorización de los bienes de cambio.",
+      "creditor": "Al constituir la previsión por la desvalorización de los bienes de cambio."
+    },
+    "represents": "Saldo sin utilizar de la previsión constituida (Resta al rubro Bienes de Cambio)."
+  },
+  {
+    "code": "1.2.1.1",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo no corriente",
+      "tertiary": "Bienes de Uso"
+    },
+    "name": "Muebles y útiles",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando compramos sillas, escritorios, armarios, etc. para aplicarlos a la actividad empresarial.",
+      "creditor": "Cuando los vendemos o damos de baja."
+    },
+    "represents": "Es el valor de los bienes muebles en existencia."
+  },
+  {
+    "code": "1.2.1.2",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo no corriente",
+      "tertiary": "Bienes de Uso"
+    },
+    "name": "Equipamiento de computación",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando compramos PC, impresoras, bienes digitales, etc. para aplicarlos a la actividad empresarial.",
+      "creditor": "Cuando los vendemos o damos de baja"
+    },
+    "represents": "Es el valor de computadoras u otros periféricos que el comerciante utiliza en su actividad."
+  },
+  {
+    "code": "1.2.1.3",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo no corriente",
+      "tertiary": "Bienes de Uso"
+    },
+    "name": "Herramientas",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando compramos bienes manuales aplicados a la actividad empresarial.",
+      "creditor": "Cuando los vendemos o damos de baja."
+    },
+    "represents": "Representa el valor de las herramientas en existencia."
+  },
+  {
+    "code": "1.2.1.4",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo no corriente",
+      "tertiary": "Bienes de Uso"
+    },
+    "name": "Maquinaria",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando compramos bienes automáticos aplicados a la actividad empresarial.",
+      "creditor": "Cuando los vendemos o damos de baja."
+    },
+    "represents": "Representa el valor de las maquinarias en existencia."
+  },
+  {
+    "code": "1.2.1.5",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo no corriente",
+      "tertiary": "Bienes de Uso"
+    },
+    "name": "Instalaciones",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando compramos bienes que deben adherirse a la pared, piso o techo aplicados a la actividad empresarial.",
+      "creditor": "Cuando los vendemos o damos de baja"
+    },
+    "represents": "Representa el valor de las instalaciones en existencia."
+  },
+  {
+    "code": "1.2.1.6",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo no corriente",
+      "tertiary": "Bienes de Uso"
+    },
+    "name": "Rodados",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando compramos vehículos, utilitarios, etc. para aplicarlos a la actividad empresarial.",
+      "creditor": "Cuando lo vendemos o damos de baja."
+    },
+    "represents": "Representa el valor de los rodados en existencia"
+  },
+  {
+    "code": "1.2.1.7",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo no corriente",
+      "tertiary": "Bienes de Uso"
+    },
+    "name": "Terrenos",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando compramos tierras al precio de costo",
+      "creditor": "Cuando los vendemos dándole de baja por su precio de costo"
+    },
+    "represents": "Representa el valor de los terrenos en existencia"
+  },
+  {
+    "code": "1.2.1.8",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo no corriente",
+      "tertiary": "Bienes de Uso"
+    },
+    "name": "Inmuebles",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando compramos bienes inmuebles (tierra + edificación) al precio costo",
+      "creditor": "Cuando lo vendemos o se destruyen dándolo de baja por su precio al costo"
+    },
+    "represents": "Representa el valor que posee el comerciante o empresa"
+  },
+  {
+    "code": "1.2.1.9",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo no corriente",
+      "tertiary": "Bienes de Uso"
+    },
+    "name": "Bienes prendados",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando compramos un bien de uso y es ofrecido como garantía prendaria del pago de la deuda o pedimos un crédito prendando un bien de nuestro patrimonio.",
+      "creditor": "Cuando cancelamos la prenda y le damos de baja del registro prendario."
+    },
+    "represents": "Representa el valor de los bienes muebles prendados."
+  },
+  {
+    "code": "1.2.1.10",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo no corriente",
+      "tertiary": "Bienes de Uso"
+    },
+    "name": "Inmuebles hipotecados",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando compramos un bien inmueble y es ofrecido como garantía hipotecaria del pago de la deuda o pedimos un crédito hipotecando un bien de nuestro patrimonio.",
+      "creditor": "Cuando cancelamos la hipoteca y le damos de baja del registro hipotecario."
+    },
+    "represents": "Representa el valor de los bienes inmuebles hipotecados."
+  },
+  {
+    "code": "1.2.1.11",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo no corriente",
+      "tertiary": "Bienes de Uso"
+    },
+    "name": "Depreciación acumulada Bs. Uso",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Cuando su valor se utiliza para la compra de nuevos bienes.",
+      "creditor": "Al registrar la depreciación por la desvalorización de los bienes de uso en cada etapa de su vida útil."
+    },
+    "represents": "Saldo de la depreciación acumulable de cada bien de uso que tiene la empresa según su vida útil (Resta al rubro Bienes de uso)."
+  },
+  {
+    "code": "1.2.2.1",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo no corriente",
+      "tertiary": "Bienes Intangibles"
+    },
+    "name": "Llave de negocio",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando adquirimos la llave de negocio.",
+      "creditor": "Cuando la vendemos o damos de baja desactivándolo con la amortización."
+    },
+    "represents": "Representa el prestigio comercial de la firma y su cartera de clientes."
+  },
+  {
+    "code": "1.2.2.2",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo no corriente",
+      "tertiary": "Bienes Intangibles"
+    },
+    "name": "Patentes de invención",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando registramos una fórmula o un nuevo producto",
+      "creditor": "Cuando la vendemos o damos de baja desactivándolo con la amortización."
+    },
+    "represents": "Representa los productos de propiedad de la empresa"
+  },
+  {
+    "code": "1.2.2.3",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo no corriente",
+      "tertiary": "Bienes Intangibles"
+    },
+    "name": "Amortización Acumulada Bs. int.",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Cuando se cancela, al final de su vida útil, el saldo contra el bien que le dio origen (solo cuando se utilizó el método indirecto para el registro).",
+      "creditor": "Por el registro de la amortización de dichos bienes (por el método indirecto)."
+    },
+    "represents": "Saldo de la amortización acumulable de los bienes intangibles por cada año de vida útil (Resta al rubro Bienes de uso)."
+  },
+  {
+    "code": "1.2.3.1",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo no corriente",
+      "tertiary": "Cargos Diferidos"
+    },
+    "name": "Gastos de organización",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando se pagan los gastos para dar inicio a la organización.",
+      "creditor": "Al desactivar el gasto, una vez que se amortiza en su totalidad."
+    },
+    "represents": "Indica el importe de los gastos de la organización."
+  },
+  {
+    "code": "1.2.3.2",
+    "headers": {
+      "principal": "Activo",
+      "secondary": "Activo no corriente",
+      "tertiary": "Cargos Diferidos"
+    },
+    "name": "Amortización Acumulada Gtos. org.",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Cuando se cancela, al final de su vida útil, el saldo contra el gasto que le dio origen (solo cuando se utilizó el método indirecto para el registro).",
+      "creditor": "Por el registro de la amortización de dichos gastos (por el método indirecto)."
+    },
+    "represents": "Saldo de la amortización acumulable de los gastos por cada año de vida útil (Resta al rubro Bienes de uso)."
+  }
+]
