@@ -613,5 +613,20 @@
       "creditor": "Por el registro de la amortización de dichos gastos (por el método indirecto)."
     },
     "represents": "Saldo de la amortización acumulable de los gastos por cada año de vida útil (Resta al rubro Bienes de uso)."
+  },
+  {
+    "code": "2.1.1.1",
+    "headers": {
+      "principal": "Pasivo",
+      "secondary": "Pasivo corriente",
+      "tertiary": "Deudas Comerciales"
+    },
+    "name": "Proveedores",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Cuando pagamos o documentamos la deuda por compra de Bienes de Cambio.",
+      "creditor": "Cuando compramos mercaderías a crédito."
+    },
+    "represents": "Es el importe de la deuda por compra de mercaderías en cuenta corriente."
   }
 ]
