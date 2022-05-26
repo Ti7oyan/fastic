@@ -25,7 +25,7 @@
         "./src/components/*"
       ],
       "$/*": [
-        "./src/routes/*"
+        "./src/tools/*"
       ],
       "~/*": [
         "./src/*"

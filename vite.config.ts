@@ -8,7 +8,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, './src/components'),
-      $: resolve(__dirname, './src/routes'),
+      $: resolve(__dirname, './src/tools'),
       '~': resolve(__dirname, './src/'),
     },
   },

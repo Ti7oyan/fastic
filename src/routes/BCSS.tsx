@@ -1,8 +1,7 @@
-import { Text } from '@chakra-ui/react';
-import ExampleTable from '~/tools/bcss/components/Table';
+import ToolBCSS from '~/tools/bcss';
 
 const BCSS = () => (
-  <ExampleTable />
+  <ToolBCSS />
 );
 
 export default BCSS;
