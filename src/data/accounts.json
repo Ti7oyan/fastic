@@ -628,5 +628,1055 @@
       "creditor": "Cuando compramos mercaderías a crédito."
     },
     "represents": "Es el importe de la deuda por compra de mercaderías en cuenta corriente."
+  },
+  {
+    "code": "2.1.1.2",
+    "headers": {
+      "principal": "Pasivo",
+      "secondary": "Pasivo corriente",
+      "tertiary": "Deudas Comerciales"
+    },
+    "name": "Acreedores Varios",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Cuando pagamos o documentamos una deuda.",
+      "creditor": "Cuando compramos bienes (que no son mercaderías) a crédito."
+    },
+    "represents": "Es el importe de la deuda sin documentar por bienes de uso u otros que tenemos."
+  },
+  {
+    "code": "2.1.1.3",
+    "headers": {
+      "principal": "Pasivo",
+      "secondary": "Pasivo corriente",
+      "tertiary": "Deudas Comerciales"
+    },
+    "name": "Documentos a pagar",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Cuando pagamos o renovamos los documentos (pagaré)",
+      "creditor": "Cuando firmamos un pagaré a favor de 3º."
+    },
+    "represents": "Es el importe de los pagaré que debemos pagar aún no vencidos."
+  },
+  {
+    "code": "2.1.1.4",
+    "headers": {
+      "principal": "Pasivo",
+      "secondary": "Pasivo corriente",
+      "tertiary": "Deudas Comerciales"
+    },
+    "name": "Tarjeta de crédito a pagar",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Cuando pagamos el resumen de cuenta de la tarjeta correspondiente.",
+      "creditor": "Cuando entregamos una tarjeta de crédito y firmamos el cupón correspondiente"
+    },
+    "represents": "Importes de copones a pagar de tarjetas de crédito que tiene el comerciante."
+  },
+  {
+    "code": "2.1.2.1",
+    "headers": {
+      "principal": "Pasivo",
+      "secondary": "Pasivo corriente",
+      "tertiary": "Deudas Bancarias"
+    },
+    "name": "Adelanto en cuenta corriente",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Cuando se cancela el adelanto en cuenta corriente.",
+      "creditor": "Cuando el banco nos autoriza para girar en descubierto (o emitir cheques)."
+    },
+    "represents": "Importe por el cual estamos autorizados por el banco a librar cheques sin fondos."
+  },
+  {
+    "code": "2.1.2.2",
+    "headers": {
+      "principal": "Pasivo",
+      "secondary": "Pasivo corriente",
+      "tertiary": "Deudas Bancarias"
+    },
+    "name": "Obligaciones a pagar bancarias",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Cuando el Banco descuenta el valor del pagaré que firmamos a su nombre.",
+      "creditor": "Cuando emitimos un pagaré a favor del Banco para que éste nos deposite dinero en nuestra cuenta corriente Bancaria."
+    },
+    "represents": "Importe que adeudamos sobre el pagaré emitido a favor del Banco."
+  },
+  {
+    "code": "2.1.3.1",
+    "headers": {
+      "principal": "Pasivo",
+      "secondary": "Pasivo corriente",
+      "tertiary": "Deudas Fiscales"
+    },
+    "name": "Saldo IVA (A)",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Cuando se paga el saldo IVA al Estado.",
+      "creditor": "Por el importe a pagar del Saldo IVA mensual."
+    },
+    "represents": "Importe del saldo total a pagar de IVA."
+  },
+  {
+    "code": "2.1.3.2",
+    "headers": {
+      "principal": "Pasivo",
+      "secondary": "Pasivo corriente",
+      "tertiary": "Deudas Fiscales"
+    },
+    "name": "Impuestos a pagar",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Cuando se abona en concepto de impuestos liquidados.",
+      "creditor": "Al contabilizar la liquidación de los impuestos por el monto adeudado."
+    },
+    "represents": "Importe correspondiente a los impuestos pendientes de pago."
+  },
+  {
+    "code": "2.1.4.1",
+    "headers": {
+      "principal": "Pasivo",
+      "secondary": "Pasivo corriente",
+      "tertiary": "Deudas Previsionales"
+    },
+    "name": "Sueldos a pagar",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Cuando se abonan los Sueldos y Jornales liquidados.",
+      "creditor": "Cuando al efectuar la liquidación de los sueldos se establece cual es la deuda con los empleados para cumplir con el pago de sueldos."
+    },
+    "represents": "Es la deuda contraída con el personal por los sueldos adeudados."
+  },
+  {
+    "code": "2.1.4.2",
+    "headers": {
+      "principal": "Pasivo",
+      "secondary": "Pasivo corriente",
+      "tertiary": "Deudas Previsionales"
+    },
+    "name": "Régimen Nacional de Seguridad Social",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Cuando se abonan los % de jubilación a la caja correspondiente.",
+      "creditor": "Cuando al efectuar la liquidación de los sueldos se establece cual es la deuda con el Estado por el R.N.S.S."
+    },
+    "represents": "Es la deuda contraída con el Estado por los R.N.S.S. adeudados."
+  },
+  {
+    "code": "2.1.4.3",
+    "headers": {
+      "principal": "Pasivo",
+      "secondary": "Pasivo corriente",
+      "tertiary": "Deudas Previsionales"
+    },
+    "name": "Régimen Nacional de Obra Social",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Cuando se abona los % a la obra social correspondiente.",
+      "creditor": "Cuando al efectuar la liquidación de los sueldos se establece cual es la deuda hacia la obra social."
+    },
+    "represents": "Es la deuda contraída de obra social del empleado."
+  },
+  {
+    "code": "2.1.4.4",
+    "headers": {
+      "principal": "Pasivo",
+      "secondary": "Pasivo corriente",
+      "tertiary": "Deudas Previsionales"
+    },
+    "name": "Cuota sindical",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Cuando se paga al sindicato las cuotas adeudadas de los empleados afectados.",
+      "creditor": "Cuando al efectuar la liquidación de los sueldos se establece cual es la deuda con el sindicato."
+    },
+    "represents": "Es la deuda contraída con el sindicato por las cuotas adeudadas."
+  },
+  {
+    "code": "2.1.4.5",
+    "headers": {
+      "principal": "Pasivo",
+      "secondary": "Pasivo corriente",
+      "tertiary": "Deudas Previsionales"
+    },
+    "name": "A.R.T. a pagar",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Cuando se paga a la aseguradora el monto adeudado.",
+      "creditor": "Cuando al efectuar la liquidación de los sueldos se establece cual es la deuda con la Aseguradora de Riesgos del Trabajo."
+    },
+    "represents": "Es la deuda contraída con la aseguradora por los montos impagos."
+  },
+  {
+    "code": "2.1.5.1",
+    "headers": {
+      "principal": "Pasivo",
+      "secondary": "Pasivo corriente",
+      "tertiary": "Otras Deudas"
+    },
+    "name": "Motivo a pagar",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Cuando se paga el importe adeudado por el motivo que lo origina.",
+      "creditor": "Cuando se efectúa la liquidación que da origen a la deuda."
+    },
+    "represents": "Representa el importe adeudado por el motivo especificado."
+  },
+  {
+    "code": "2.2.1.1",
+    "headers": {
+      "principal": "Pasivo",
+      "secondary": "Pasivo no corriente",
+      "tertiary": "Deudas Financieras"
+    },
+    "name": "Prendas a pagar",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Cuando pagamos la deuda prendaria.",
+      "creditor": "Créditos obtenidos de 3º o compras de bienes muebles con garantía prendaria."
+    },
+    "represents": "Representa las deudas prendarias."
+  },
+  {
+    "code": "2.2.1.2",
+    "headers": {
+      "principal": "Pasivo",
+      "secondary": "Pasivo no corriente",
+      "tertiary": "Deudas Financieras"
+    },
+    "name": "Hipotecas a pagar",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Cuando pagamos la deuda hipotecaria.",
+      "creditor": "Créditos obtenidos de 3º o compras de bienes inmuebles con garantía hipotecaria."
+    },
+    "represents": "Representa las deudas hipotecarias"
+  },
+  {
+    "code": "2.2.2.1",
+    "headers": {
+      "principal": "Pasivo",
+      "secondary": "Pasivo no corriente",
+      "tertiary": "Deudas Previsionales"
+    },
+    "name": "Previsión para despido",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Cuando se utiliza la previsión contra el despido generado en el EE",
+      "creditor": "cuando se calcula el monto de previsión sobre los sueldos brutos "
+    },
+    "represents": "Importe de previsión para futuros despidos que se originen en la empresa."
+  },
+  {
+    "code": "2.2.2.2",
+    "headers": {
+      "principal": "Pasivo",
+      "secondary": "Pasivo no corriente",
+      "tertiary": "Deudas Previsionales"
+    },
+    "name": "Socio cuenta particular",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Cuando se pagan las utilidades repartidas a cada socio o dueño.",
+      "creditor": "cuando se distribuye a los socios o dueños las utilidades obtenidas en el EE"
+    },
+    "represents": "Importe de las utilidades distribuidas a los socios o dueños."
+  },
+  {
+    "code": "2.2.2.3",
+    "headers": {
+      "principal": "Pasivo",
+      "secondary": "Pasivo no corriente",
+      "tertiary": "Deudas Previsionales"
+    },
+    "name": "Dividendos a pagar",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Cuando se pagan los dividendos a los accionistas",
+      "creditor": "Cuando se liquidan el pago a los tenedores de acciones de una SA"
+    },
+    "represents": "Importe liquidado de dividendos a los accionistas"
+  },
+  {
+    "code": "2.2.2.4",
+    "headers": {
+      "principal": "Pasivo",
+      "secondary": "Pasivo no corriente",
+      "tertiary": "Deudas Previsionales"
+    },
+    "name": "Honorarios a pagar",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Cuando se pagan los honorarios al consejo consultivo de la SA.",
+      "creditor": "Cuando se liquidan el pago de dividendos al consejo consultivo de una SA"
+    },
+    "represents": "Importe liquidado de honorarios al cuerpo consultivo de una SA."
+  },
+  {
+    "code": "2.2.3.1",
+    "headers": {
+      "principal": "Pasivo",
+      "secondary": "Pasivo no corriente",
+      "tertiary": "Otras Deudas"
+    },
+    "name": "Motivo cobrado por adelantado",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Cuando cumplido el plazo vuelve a la cuenta de ganancia de origen.",
+      "creditor": "Cuando se ajusta la cuenta por el monto que corresponde al EE siguiente"
+    },
+    "represents": "Ganancias cobradas cuyos importes corresponden al EE siguiente."
+  },
+  {
+    "code": "3.1",
+    "headers": {
+      "principal": "Patrimonio Neto",
+      "secondary": "",
+      "tertiary": ""
+    },
+    "name": "Capital o Capital social",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Por la disminución del capital por pérdidas sufridas en el EE o retiro del capital.",
+      "creditor": "Por aumento del capital por suscripción o por capitalización de ganancias."
+    },
+    "represents": "Aportes suscripto por los dueños o socios de una empresa."
+  },
+  {
+    "code": "3.2",
+    "headers": {
+      "principal": "Patrimonio Neto",
+      "secondary": "",
+      "tertiary": ""
+    },
+    "name": "Resultados del ejercicio",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Cuando al finalizar el ejercicio se generan pérdidas y al realizarse la distribución de Utilidades.",
+      "creditor": "Cuando al finalizar el ejercicio se generan ganancias en el EE y al realizarse la absorción de las Pérdidas."
+    },
+    "represents": "Deudor: en el ejercicio económico se obtuvo una Pérdida. Acreedor: en el ejercicio económico se obtuvo una Ganancia."
+  },
+  {
+    "code": "3.3",
+    "headers": {
+      "principal": "Patrimonio Neto",
+      "secondary": "",
+      "tertiary": ""
+    },
+    "name": "Resultados no asignados",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Al distribuirlos de manera interna o externa en la empresa.",
+      "creditor": "Porcentaje de utilidades que queda sin distribuir del EE."
+    },
+    "represents": "Representan las utilidades no distribuidas de un EE anteriores."
+  },
+  {
+    "code": "3.4",
+    "headers": {
+      "principal": "Patrimonio Neto",
+      "secondary": "",
+      "tertiary": ""
+    },
+    "name": "Reserva Legal",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Al utilizar dichas reservas para afrontar resultados negativos del EE.",
+      "creditor": "Al destinar de las utilidades el % correspondiente a la reserva establecida por ley."
+    },
+    "represents": "Importe de Reserva establecida por la ley de sociedades comerciales."
+  },
+  {
+    "code": "3.5",
+    "headers": {
+      "principal": "Patrimonio Neto",
+      "secondary": "",
+      "tertiary": ""
+    },
+    "name": "Reserva Estatutaria",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Al utilizar dichas reservas para afrontar resultados negativos del EE.",
+      "creditor": "Al destinar de las utilidades el % correspondiente a la reserva establecida por el estatuto de la empresa."
+    },
+    "represents": "Importe de Reserva establecida por el estatuto de la empresa"
+  },
+  {
+    "code": "3.6",
+    "headers": {
+      "principal": "Patrimonio Neto",
+      "secondary": "",
+      "tertiary": ""
+    },
+    "name": "Reserva facultativa",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Al utilizar dichas reservas para afrontar resultados negativos del EE o bien utilizarla en los destinos propuestos por los dueños o socios.",
+      "creditor": "Al destinar de las utilidades el % correspondiente a la reserva establecida por facultad de los dueños o socios de la empresa."
+    },
+    "represents": "Importe de Reserva establecida por facultad de los dueños o socios de la empresa."
+  },
+  {
+    "code": "4.1.1",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Administración",
+      "tertiary": ""
+    },
+    "name": "Gastos generales",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando se pagan gastos comunes a la vida de la empresa.",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Son las pérdidas sufridas por gastos continuos que tiene la empresa."
+  },
+  {
+    "code": "4.1.2",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Administración",
+      "tertiary": ""
+    },
+    "name": "Servicios pagados",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando se pagan dichos servicios.",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Son las pérdidas sufridas por servicios pagados."
+  },
+  {
+    "code": "4.1.3",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Administración",
+      "tertiary": ""
+    },
+    "name": "Gastos de mantenimiento y/o reparación",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando se producen gastos por el mantenimiento del inmueble.",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Son las pérdidas sufridas por los gastos de mantenimiento y/o reparación."
+  },
+  {
+    "code": "4.1.4",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Administración",
+      "tertiary": ""
+    },
+    "name": "Gastos bancarios",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando el Banco nos cobra el mantenimiento de la cuenta corriente.",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Son las pérdidas sufridas por los gastos bancarios."
+  },
+  {
+    "code": "4.1.5",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Administración",
+      "tertiary": ""
+    },
+    "name": "Sellado bancario",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando el Banco nos cobra por sellados bancarios.",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Son las pérdidas sufridas por los sellados bancarios."
+  },
+  {
+    "code": "4.1.6",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Administración",
+      "tertiary": ""
+    },
+    "name": "Comisiones bancarias",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando el Banco nos cobra sus comisiones.",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Son las pérdidas sufridas por las comisiones bancarias."
+  },
+  {
+    "code": "4.1.7",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Administración",
+      "tertiary": ""
+    },
+    "name": "Sueldos y jornales",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando se liquidan los sueldos de los empleados.",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Son las pérdidas sufridas por los sueldos y jornales pagados."
+  },
+  {
+    "code": "4.1.8",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Administración",
+      "tertiary": ""
+    },
+    "name": "Cargas sociales",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando se liquidan las cargas sociales de los sueldos.",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Son las pérdidas sufridas por las cargas sociales pagadas."
+  },
+  {
+    "code": "4.1.9",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Administración",
+      "tertiary": ""
+    },
+    "name": "A.R.T.",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando se liquida a la Aseguradora de Riesgos del Trabajo.",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Son las pérdidas sufridas por el pago a la A.R.T."
+  },
+  {
+    "code": "4.1.10",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Administración",
+      "tertiary": ""
+    },
+    "name": "Despido",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando se paga un despido.",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Son las pérdidas sufridas por el pago de indemnizaciones."
+  },
+  {
+    "code": "4.1.11",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Administración",
+      "tertiary": ""
+    },
+    "name": "Quebranto por Despido",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando destinamos dinero para constituir la previsión para el Despido del próximo EE.",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Son las pérdidas sufridas por la distribución de recursos para la constitución de la previsión de Despido."
+  },
+  {
+    "code": "4.1.12",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Administración",
+      "tertiary": ""
+    },
+    "name": "Alquileres pagados",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando se pagan los alquileres.",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Son las pérdidas sufridas por los alquileres pagados"
+  },
+  {
+    "code": "4.1.13",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Administración",
+      "tertiary": ""
+    },
+    "name": "Seguros pagados",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando se pagan los seguros generales del ente.",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Son las perdidas sufridas por los seguros pagados"
+  },
+  {
+    "code": "4.1.14",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Administración",
+      "tertiary": ""
+    },
+    "name": "Faltante de caja",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando falta dinero y valores en el arqueo de caja.",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Cuando el dinero del arqueo es inferior al que aparecen en los registros contables"
+  },
+  {
+    "code": "4.1.15",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Administración",
+      "tertiary": ""
+    },
+    "name": "Depreciación bienes de uso",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando se calcula la depreciación de cada uno de los bienes de uso.",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Importe total de la depreciación de cada uno de los bienes de uso"
+  },
+  {
+    "code": "4.1.16",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Administración",
+      "tertiary": ""
+    },
+    "name": "Amortización act. int/cargos dif.",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando se calcula la amortización de los activos intangibles o cargos diferidos.",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Importe total de las amortizaciones de cada uno de los bienes intangibles o cargos diferidos"
+  },
+  {
+    "code": "4.2.1",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Comercialización",
+      "tertiary": ""
+    },
+    "name": "Costo de la mercadería vendida (C.M.V)",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Por el cálculo de los costos de los Bienes de Cambio vendidos.",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Son las pérdidas sufridas por el costo de los Bienes de Cambio."
+  },
+  {
+    "code": "4.2.2",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Comercialización",
+      "tertiary": ""
+    },
+    "name": "Fletes",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando se pagan fletes y acarreados.",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Son las pérdidas sufridas por los fletes pagados"
+  },
+  {
+    "code": "4.2.3",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Comercialización",
+      "tertiary": ""
+    },
+    "name": "Impuestos pagados",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando se pagan o liquidan los impuestos.",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Son las pérdidas sufridas por los impuestos pagados."
+  },
+  {
+    "code": "4.2.4",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Comercialización",
+      "tertiary": ""
+    },
+    "name": "Descuentos perdidos",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando se ceden descuentos a nuestros clientes por pago de contado.",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Son las pérdidas sufridas por los descuentos cedidos."
+  },
+  {
+    "code": "4.2.5",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Comercialización",
+      "tertiary": ""
+    },
+    "name": "Gastos de publicidad",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando se paga la publicidad de los productos vendidos.",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Son las pérdidas sufridas por los gastos de publicidad."
+  },
+  {
+    "code": "4.2.6",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Comercialización",
+      "tertiary": ""
+    },
+    "name": "Cuota autónoma",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando se paga la cuota de autónomo del monotributo.",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Son las pérdidas sufridas por el pago de la cuota autónoma."
+  },
+  {
+    "code": "4.2.7",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Comercialización",
+      "tertiary": ""
+    },
+    "name": "Cuota monotributo",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando se paga la cuota del monotributo.",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Son las pérdidas sufridas por el pago de la cuota monotributo."
+  },
+  {
+    "code": "4.2.8",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Comercialización",
+      "tertiary": ""
+    },
+    "name": "Comisiones pagadas",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando se pagan comisiones a 3º",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Pérdida sufrida por el pago de comisiones a 3°"
+  },
+  {
+    "code": "4.2.9",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Comercialización",
+      "tertiary": ""
+    },
+    "name": "Quebranto p' Ds. incobrables",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Monto por el cual se constituye la previsión para deudores incobrables",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Pérdida por el cual se calcula la previsión para deudores incobrables"
+  },
+  {
+    "code": "4.2.10",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Comercialización",
+      "tertiary": ""
+    },
+    "name": "Faltante de mercadería",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando falta mercaderías en el inventario de bienes de cambio.",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Importe de la mercadería sustraída en la empresa."
+  },
+  {
+    "code": "4.2.11",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Comercialización",
+      "tertiary": ""
+    },
+    "name": "Desvalorización de mercadería",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando se registra la pérdida de valor de la mercadería en épocas inflacionarias",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Importe del valor que pierde la mercadería por efectos de crisis económicas"
+  },
+  {
+    "code": "4.2.12",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Comercialización",
+      "tertiary": ""
+    },
+    "name": "Quebranto x dif. De mercadería",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Monto por el cual se constituye la previsión por la desvalorización de la mercadería.",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Pérdida por el calculo de la previsión por desvalorización de la mercadería."
+  },
+  {
+    "code": "4.2.13",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Comercialización",
+      "tertiary": ""
+    },
+    "name": "Deudores incobrables",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Monto de deudores a los que no podrá cobrarle la empresa porque fueron a quiebra.",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "El monto de deudores a los que no cobrará más la empresa."
+  },
+  {
+    "code": "4.3.1",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Financiación",
+      "tertiary": ""
+    },
+    "name": "Intereses pagados",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando se pagan intereses por operaciones a plazo.",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Son las pérdidas sufridas por los intereses pagados."
+  },
+  {
+    "code": "4.3.2",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Financiación",
+      "tertiary": ""
+    },
+    "name": "Intereses bancarios",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Cuando se pagan los intereses bancarios.",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Representa los intereses que pagamos al banco por operaciones crediticias."
+  },
+  {
+    "code": "4.3.3",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Financiación",
+      "tertiary": ""
+    },
+    "name": "Quebranto por diferencia de cot.",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Monto por el cual se constituye la previsión por la desvalorización de la moneda extranjera o la inversión.",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": "Pérdida por el calculo de la previsión por desvalorización de las inversiones."
+  },
+  {
+    "code": "4.3.4",
+    "headers": {
+      "principal": "Cuentas de resultado negativo (pérdida)",
+      "secondary": "Gastos de Financiación",
+      "tertiary": ""
+    },
+    "name": "",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "",
+      "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
+    },
+    "represents": ""
+  },
+  {
+    "code": "5.1",
+    "headers": {
+      "principal": "Cuentas de resultado positivo (ganancia)",
+      "secondary": "",
+      "tertiary": ""
+    },
+    "name": "Ventas",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Cuando nos devuelven mercaderías que hemos vendido y al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE.",
+      "creditor": "Por las ventas efectuadas de bienes o servicios."
+    },
+    "represents": "Importe de las ventas realizadas durante el ejercicio."
+  },
+  {
+    "code": "5.2",
+    "headers": {
+      "principal": "Cuentas de resultado positivo (ganancia)",
+      "secondary": "",
+      "tertiary": ""
+    },
+    "name": "Intereses ganados",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE.",
+      "creditor": "Cuando se cobran interés por operaciones a plazo."
+    },
+    "represents": "Ganancias por intereses a nuestro favor."
+  },
+  {
+    "code": "5.3",
+    "headers": {
+      "principal": "Cuentas de resultado positivo (ganancia)",
+      "secondary": "",
+      "tertiary": ""
+    },
+    "name": "Descuentos ganados",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE.",
+      "creditor": "Cuando nos otorgan descuentos por pago de contado."
+    },
+    "represents": "Ganancias por descuentos a nuestro favor."
+  },
+  {
+    "code": "5.4",
+    "headers": {
+      "principal": "Cuentas de resultado positivo (ganancia)",
+      "secondary": "",
+      "tertiary": ""
+    },
+    "name": "Alquileres cobrados",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE.",
+      "creditor": "Cuando se cobra alquiler de un inmueble."
+    },
+    "represents": "Ganancias por los alquileres a nuestro favor."
+  },
+  {
+    "code": "5.5",
+    "headers": {
+      "principal": "Cuentas de resultado positivo (ganancia)",
+      "secondary": "",
+      "tertiary": ""
+    },
+    "name": "Comisiones cobradas",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE.",
+      "creditor": "Cuando se cobra comisiones por ventas de productos de 3º."
+    },
+    "represents": "Ganancias obtenidas por las comisiones a nuestro favor."
+  },
+  {
+    "code": "5.6",
+    "headers": {
+      "principal": "Cuentas de resultado positivo (ganancia)",
+      "secondary": "",
+      "tertiary": ""
+    },
+    "name": "Sobrante de caja",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE.",
+      "creditor": "Cuando el dinero del arqueo es superior al registrado en la cuenta."
+    },
+    "represents": "Ganancia por sobrante en el arqueo de dinero en efectivo"
+  },
+  {
+    "code": "5.7",
+    "headers": {
+      "principal": "Cuentas de resultado positivo (ganancia)",
+      "secondary": "",
+      "tertiary": ""
+    },
+    "name": "Sobrante de mercaderías",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE.",
+      "creditor": "Cuando en el inventario de la mercadería arroja un valor superior a lo registrado."
+    },
+    "represents": "Ganancia por sobrante de mercadería al realizar el inventario."
+  },
+  {
+    "code": "5.8",
+    "headers": {
+      "principal": "Cuentas de resultado positivo (ganancia)",
+      "secondary": "",
+      "tertiary": ""
+    },
+    "name": "Diferencia de cotización",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE.",
+      "creditor": "Cuando el VN de una inversión es mayor al Valor de Cotización."
+    },
+    "represents": "Ganancia por el incremento en la valorización de una inversión (moneda extranjera, títulos públicos, acciones)"
+  },
+  {
+    "code": "6.1",
+    "headers": {
+      "principal": "Cuentas de movimiento saldo deudor",
+      "secondary": "",
+      "tertiary": ""
+    },
+    "name": "Compras",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Por la compra de mercaderías para revender.",
+      "creditor": "Por las devoluciones que efectuamos a nuestros proveedores y cuando se calcula el costo de la mercadería vendida.."
+    },
+    "represents": "Importe de las compras realizadas en el EE."
+  },
+  {
+    "code": "6.2",
+    "headers": {
+      "principal": "Cuentas de movimiento saldo deudor",
+      "secondary": "",
+      "tertiary": ""
+    },
+    "name": "Devolución de ventas",
+    "isDebtor": true,
+    "cases": {
+      "debtor": "Por las devoluciones de mercaderías vendidas a nuestros clientes.",
+      "creditor": "Al disminuir la cuenta Ventas y al determinar el C.M.V."
+    },
+    "represents": "Importe de las mercaderías devueltas por los clientes."
+  },
+  {
+    "code": "7.1",
+    "headers": {
+      "principal": "Cuentas de movimiento saldo acreedor",
+      "secondary": "",
+      "tertiary": ""
+    },
+    "name": "Devolución de compras",
+    "isDebtor": false,
+    "cases": {
+      "debtor": "Al disminuir la cuenta Compras y determinar el C.M.V.",
+      "creditor": "Al registrar las devoluciones realizadas hacia los proveedores."
+    },
+    "represents": "Importes de las mercaderías devueltas al proveedor"
   }
 ]
