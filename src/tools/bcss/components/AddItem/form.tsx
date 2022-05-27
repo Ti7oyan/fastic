@@ -1,102 +1,110 @@
-import {
-  FormControl,
-  NumberInput,
-  NumberInputField,
-  Radio,
-  RadioGroup,
-  FormLabel,
-  /*
-  Input,
-  Switch,
-  */
-  Select,
-  Stack,
-  Button,
-} from '@chakra-ui/react';
+import { Autocomplete, Button } from '@mantine/core';
 import { useEffect, useState } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { SubmitHandler, useForm, Controller } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
 import accounts from '~/data/accounts.json';
 import IAccount from '~/types/account';
-import parseCode from '$/bcss/utils/parseCode';
+
+// Components and validation schema
+import Groups from './groups';
+import Error from './error';
+import NumberField from './number';
+import schema from './schema';
+
+// Utils
+import { parseName } from '$/bcss/utils/parseCode';
 import createItem from '$/bcss/utils/createItem';
+import filterGroups from '$/bcss/utils/filterGroups';
 
 type FormData = {
-  code: string;
+  accountName: string;
   debts: number;
   credits: number;
 }
 
 const Form = () => {
-  const { register, handleSubmit } = useForm<FormData>();
+  // Register, create and save the item on the localStorage.
+  const {
+    control, handleSubmit, formState: { errors },
+  } = useForm<FormData>({
+    resolver: yupResolver(schema),
+  });
   const onSubmit: SubmitHandler<FormData> = (data) => {
-    const account = parseCode(data.code);
-    createItem(
-      account,
-      data.debts,
-      data.credits,
-    );
+    console.log(data);
   };
 
+  // Set the default group and its options.
   const [group, setGroup] = useState('Activo');
-  const [options, setOptions] = useState<IAccount[]>(() => (
-    accounts.filter((account: IAccount) => account.headers.principal === group)));
+  const [options, setOptions] = useState<IAccount[]>(() => filterGroups(accounts, group));
 
   useEffect(() => {
-    setOptions(accounts.filter((account: IAccount) => account.headers.principal === group));
+    setOptions(filterGroups(accounts, group));
   }, [group]);
 
   return (
-    <FormControl as="form" onSubmit={handleSubmit(onSubmit)}>
+    <form
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      }}
+      onSubmit={handleSubmit(onSubmit)}
+    >
 
-      <RadioGroup
-        onChange={setGroup}
-        defaultValue={group}
-        colorScheme="orange"
-      >
-        <Stack
-          margin={10}
-          direction="row"
-        >
-          <Radio value="Activo">Activo</Radio>
-          <Radio value="Pasivo">Pasivo</Radio>
-          <Radio value="Patrimonio Neto">PN</Radio>
-          <Radio value="Pérdida">Pérdida</Radio>
-          <Radio value="Ganancia">Ganancia</Radio>
-        </Stack>
-      </RadioGroup>
+      <Groups onChange={setGroup} defaultValue={group} />
 
-      <Select
-        id="use-account"
-        placeholder="Seleccioná una cuenta"
-        variant="filled"
-        colorScheme="orange"
-        {...register('code')}
-      >
-        {options.map((account) => (
-          <option
-            key={account.code}
-            value={account.code}
-          >
-            {account.name}
-          </option>
-        ))}
-      </Select>
+      <Controller
+        name="accountName"
+        control={control}
+        render={({ field: { onChange, value } }) => (
+          <Autocomplete
+            onChange={onChange}
+            value={value}
+            style={{
+              width: '50%',
+              margin: '1em',
+            }}
+            styles={{
+              label: {
+                fontSize: '1.25em',
+              },
+            }}
+            label="Seleccioná una cuenta"
+            placeholder="Ej: Títulos públicos o 1.1.1.1"
+            limit={options.length}
+            maxDropdownHeight={200}
+            data={options.map((account) => (
+              {
+                value: account.name,
+                group: account.headers.tertiary !== ''
+                  ? account.headers.tertiary
+                  : account.headers.secondary,
+                label: `${account.code} - ${account.name}`,
+              }
+            ))}
+          />
+        )}
+      />
 
-      <FormLabel htmlFor="use-debts">Total de débitos</FormLabel>
-      <NumberInput id="use-debts">
-        <NumberInputField {...register('debts')} />
-      </NumberInput>
+      <Controller
+        name="debts"
+        control={control}
+        render={({ field: { onChange, value } }) => (
+          <NumberField onChange={onChange} value={value} />
+        )}
+      />
 
-      <FormLabel htmlFor="use-credits">Total de créditos</FormLabel>
-      <NumberInput id="use-credits">
-        <NumberInputField {...register('credits')} />
-      </NumberInput>
+      <Controller
+        name="credits"
+        control={control}
+        render={({ field: { onChange, value } }) => (
+          <NumberField onChange={onChange} value={value} />
+        )}
+      />
 
-      <Button type="submit">
-        Agregar
-      </Button>
+      <Button type="submit" />
 
-    </FormControl>
+    </form>
   );
 };
 

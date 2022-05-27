@@ -1,18 +1,23 @@
-import { Flex, Text } from '@chakra-ui/react';
+import { Box, Text } from '@mantine/core';
 import { MdBolt } from 'react-icons/md';
 
 const Footer = () => (
-  <Flex
-    justifyContent="center"
-    width="100%"
-    padding={2}
-    alignItems="center"
-    position="fixed"
-    bottom={0}
+  <Box
+    style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: '100%',
+      padding: '2em',
+      position: 'fixed',
+      bottom: 0,
+    }}
   >
     <Text
-      display="flex"
-      color="orange.400"
+      sx={(theme) => ({
+        display: 'flex',
+        color: theme.colors.orange[6],
+      })}
     >
       Fastic
       <MdBolt style={{
@@ -22,11 +27,11 @@ const Footer = () => (
     </Text>
 
     <Text
-      color="GrayText"
+      color="gray"
     >
       - Ticiano Morvan
     </Text>
-  </Flex>
+  </Box>
 );
 
 export default Footer;

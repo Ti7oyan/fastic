@@ -1,9 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import {
-  ChakraProvider, extendTheme, type ThemeConfig, ColorModeScript,
-} from '@chakra-ui/react';
+import { render } from 'react-dom';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { MantineProvider } from '@mantine/core';
 import App from './App';
 
 // Fonts
@@ -13,31 +11,26 @@ import '@fontsource/questrial';
 import Hero from './routes/Hero';
 import BCSS from './routes/BCSS';
 
-const config: ThemeConfig = {
-  initialColorMode: 'dark',
-  useSystemColorMode: false,
-};
-
-const theme = extendTheme({
-  config,
-  fonts: {
-    heading: '"Questrial", sans-serif',
-    body: '"Questrial", sans-serif',
-  },
-});
-
-ReactDOM.createRoot(document.getElementById('root')!).render(
+render(
   <React.StrictMode>
-    <ChakraProvider theme={theme}>
-      <ColorModeScript initialColorMode="dark" />
+    <MantineProvider
+      theme={{
+        colorScheme: 'dark',
+        fontFamily: 'Questrial, sans-serif',
+        headings: { fontFamily: 'Questrial, sans-serif' },
+      }}
+      withGlobalStyles
+      withNormalizeCSS
+    >
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<App />}>
             <Route index element={<Hero />} />
-            <Route path="/bcss" element={<BCSS />} />
+            <Route element={<BCSS />} path="bcss" />
           </Route>
         </Routes>
       </BrowserRouter>
-    </ChakraProvider>
+    </MantineProvider>
   </React.StrictMode>,
+  document.getElementById('root'),
 );

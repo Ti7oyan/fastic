@@ -1506,13 +1506,13 @@
       "secondary": "Gastos de Financiación",
       "tertiary": ""
     },
-    "name": "",
+    "name": "Diferencia de cotización",
     "isDebtor": true,
     "cases": {
-      "debtor": "",
+      "debtor": "Cuando el VN de una inversión es inferior al Valor de Cotización.",
       "creditor": "Al final del ejercicio cuando su saldo se refunde para determinar el resultado del EE."
     },
-    "represents": ""
+    "represents": "Pérdida por la desvalorización de una inversión (moneda extranjera, títulos públicos, acciones)"
   },
   {
     "code": "5.1",

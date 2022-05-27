@@ -1,36 +1,46 @@
 import {
-  Flex, Heading, Text,
-} from '@chakra-ui/react';
+  Box,
+  Text,
+  Title,
+} from '@mantine/core';
 import { MdBolt } from 'react-icons/md';
 import Tools from '@/Tools';
 
 const Hero = () => (
-  <Flex
-    direction="column"
-    alignItems="center"
+  <Box
+    style={{
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-around',
+      alignItems: 'center',
+    }}
   >
-    <Heading
-      as="h1"
-      fontSize="4xl"
-      display="flex"
-      color="orange.400"
+    <Title
+      order={1}
+      sx={(theme) => ({
+        display: 'flex',
+        color: theme.colors.orange[6],
+      })}
     >
       Fastic
       <MdBolt style={{
         alignSelf: 'center',
       }}
       />
-    </Heading>
+    </Title>
 
     <Text
-      fontSize="lg"
-      textAlign="center"
+      size="lg"
+      style={{
+        alignSelf: 'center',
+        marginBlockEnd: '2em',
+      }}
     >
       Proveemos herramientas para facilitar tu flujo de trabajo.
     </Text>
 
     <Tools />
-  </Flex>
+  </Box>
 );
 
 export default Hero;

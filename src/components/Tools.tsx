@@ -1,34 +1,38 @@
-import { Grid, GridItem, Text } from '@chakra-ui/react';
+import {
+  Grid, Space, Text,
+} from '@mantine/core';
 import ToolCard from '@/ToolCard';
 
 const Tools = () => (
-  <Grid
-    gridTemplateColumns={['repeat(1, 1fr)', 'repeat(2, 1fr)']}
-    margin={5}
-    gap={6}
-  >
+  <Grid grow gutter="xl">
     <ToolCard
       title="B.C.S.S."
       description="Generador de Balance de Comprobación de Sumas y Saldos"
-      link="/bcss"
+      route="/bcss"
+      repository="bcss"
     />
 
-    <GridItem
-      width="100%"
-      backgroundColor="gray.800"
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-      cursor="not-allowed"
-      borderRadius={20}
+    <Space w="md" />
+
+    <Grid.Col
+      span={2}
+      sx={(theme) => ({
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        cursor: 'not-allowed',
+        borderRadius: '1em',
+        width: '100%',
+        backgroundColor: theme.colors.dark[6],
+      })}
     >
       <Text
-        fontSize="xl"
-        color="GrayText"
+        size="xl"
+        color="gray"
       >
         Próximamente...
       </Text>
-    </GridItem>
+    </Grid.Col>
   </Grid>
 );
 

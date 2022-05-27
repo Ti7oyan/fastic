@@ -1,31 +1,20 @@
-import {
-  Container, useColorMode,
-} from '@chakra-ui/react';
 import { Outlet } from 'react-router-dom';
+import { Container } from '@mantine/core';
 import Footer from '@/Footer';
 
-const App = () => {
-  const { colorMode } = useColorMode();
-
-  return (
-    <Container
-      maxWidth="100%"
-      paddingInlineStart="unset"
-      bgColor={colorMode === 'light' ? 'white' : 'blackAlpha.400'}
-    >
-
-      <Container
-        h="100vh"
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Outlet />
-      </Container>
-
-      <Footer />
-    </Container>
-  );
-};
+const App = () => (
+  <Container
+    style={{
+      display: 'flex',
+      height: '100vh',
+      justifyContent: 'center',
+      alignItems: 'center',
+    }}
+    fluid
+  >
+    <Outlet />
+    <Footer />
+  </Container>
+);
 
 export default App;
