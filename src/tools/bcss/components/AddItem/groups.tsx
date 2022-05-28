@@ -11,9 +11,13 @@ type GroupsProps = {
 
 const Groups = ({ onChange, defaultValue }: GroupsProps) => (
   <Chips
-    style={{
+    color="orange"
+    sx={(theme) => ({
       justifyContent: 'center',
-    }}
+      backgroundColor: theme.colors.dark[8],
+      padding: '2em',
+      borderRadius: '1em',
+    })}
     multiple={false}
     onChange={onChange}
     defaultValue={defaultValue}

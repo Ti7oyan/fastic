@@ -8,7 +8,7 @@ const Footer = () => (
       justifyContent: 'center',
       alignItems: 'center',
       width: '100%',
-      padding: '2em',
+      padding: '.5em',
       position: 'fixed',
       bottom: 0,
     }}
