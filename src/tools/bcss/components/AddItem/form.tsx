@@ -1,9 +1,10 @@
 import {
-  Button, Container, Group,
+  Button, Container, Group, createStyles,
 } from '@mantine/core';
 import { useContext, useEffect, useState } from 'react';
 import { SubmitHandler, useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { MdAddCircle } from 'react-icons/md';
 
 // Data
 import accounts from '~/data/accounts.json';
@@ -15,6 +16,7 @@ import ItemType from '$/bcss/types/item';
 // Components and validation schema
 import Groups from './groups';
 import NumberField from './number';
+import CreateAccount from './create';
 import schema from './schema';
 
 // Utils
@@ -35,17 +37,41 @@ interface FormProps {
   setItems: (items: ItemType[]) => void;
 }
 
+const useStyles = createStyles(() => ({
+  form: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    marginBlockStart: '1em',
+  },
+
+  numberGroup: {
+    justifyContent: 'center',
+    marginBlockStart: '2em',
+    marginBlockEnd: '2em',
+  },
+
+  button: {
+    marginBlockEnd: '4em',
+  },
+}));
+
 // This component takes three inputs: the desired account, the debts and the credits and
 // then creates a new item, that is passed to the tool context for further processing.
 const Form = ({ setItems }: FormProps) => {
+  const { classes } = useStyles();
+
+  const [openModal, setOpenModal] = useState<boolean>(false);
+
   const items = useContext(ItemsContext);
 
-  // Register, create and save the item on the localStorage.
+  // Defining the form, its validation schema and default values.
   const { control, handleSubmit, reset } = useForm<FormData>({
     resolver: yupResolver(schema),
     defaultValues: { accountName: '', credits: 0, debts: 0 },
   });
 
+  // Create and save the item on the localStorage. Also resets the current form data.
   const onSubmit: SubmitHandler<FormData> = (data) => {
     const account = parseName(data.accountName);
     const newItem = createItem(account, data.debts, data.credits);
@@ -65,15 +91,7 @@ const Form = ({ setItems }: FormProps) => {
     <Container
       size="sm"
     >
-      <form
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-        }}
-        onSubmit={handleSubmit(onSubmit)}
-      >
-
+      <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
         <Groups onChange={setGroup} defaultValue={group} />
 
         <Controller
@@ -84,11 +102,10 @@ const Form = ({ setItems }: FormProps) => {
           )}
         />
 
-        <Group
-          style={{
-            marginBlockStart: '2em',
-          }}
-        >
+        <Button onClick={() => setOpenModal(!openModal)}>Crear cuenta</Button>
+        <CreateAccount isOpened={openModal} setOpened={setOpenModal} />
+
+        <Group className={classes.numberGroup}>
           <Controller
             name="debts"
             control={control}
@@ -107,11 +124,10 @@ const Form = ({ setItems }: FormProps) => {
         </Group>
 
         <Button
-          style={{
-            marginBlockStart: '2em',
-          }}
+          className={classes.button}
           type="submit"
           color="orange"
+          leftIcon={<MdAddCircle />}
         >
           Agregar cuenta
         </Button>
