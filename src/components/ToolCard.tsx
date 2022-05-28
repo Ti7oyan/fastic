@@ -1,5 +1,5 @@
 import {
-  Grid, Text, Anchor, Button, Group,
+  Text, Anchor, Button, Group, Box, createStyles,
 } from '@mantine/core';
 import { Link } from 'react-router-dom';
 import { MdArrowForward } from 'react-icons/md';
@@ -12,73 +12,76 @@ type ToolCardProps = {
   repository: string;
 }
 
+const useStyles = createStyles((theme) => ({
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    width: '100%',
+    backgroundColor: theme.colors.dark[9],
+    borderRadius: '1em',
+    padding: '1em',
+    maxWidth: theme.breakpoints.xs,
+    textAlign: 'left',
+  },
+
+  toolTitle: {
+    color: theme.colors.orange[6],
+  },
+
+  buttonGroup: {
+    justifyContent: 'flex-end',
+
+    [`@media (max-width: ${theme.breakpoints.xs}px)`]: {
+      justifyContent: 'center',
+    },
+  },
+
+  button: {
+    width: 'max-content',
+    marginBlockStart: '1em',
+  },
+}));
+
+/**
+ * Returns a card with the information of a tool.
+ * @param {ToolCardProps} props
+ * @param {string} props.title - The title of the tool.
+ * @param {string} props.description - The description of the tool.
+ * @param {string} props.route - The internal route of the tool.
+ * @param {string} props.repository - The folder name of the tool in the tools's folder.
+ */
 const ToolCard = ({
   title, description, route, repository,
-}: ToolCardProps) => (
-  <Grid.Col
-    span={2}
-    sx={(theme) => ({
-      display: 'flex',
-      flexDirection: 'column',
-      width: '100%',
-      backgroundColor: theme.colors.dark[9],
-      borderRadius: '1em',
-      padding: '1em',
-      maxWidth: theme.breakpoints.xs,
-      textAlign: 'left',
-    })}
-  >
-    <Text
-      size="xl"
-      weight="bold"
-      sx={(theme) => ({
-        color: theme.colors.orange[6],
-      })}
-    >
-      {title}
-    </Text>
+}: ToolCardProps) => {
+  const { classes } = useStyles();
+  const baseURL = 'https://github.com/Ti7oyan/fastic/tree/v2/src/tools/';
 
-    <Text>{description}</Text>
+  return (
+    <Box className={classes.container}>
 
-    <Group>
-      <Anchor
-        href={`https://github.com/Ti7oyan/fastic/tree/v2/src/tools/${repository}`}
-        target="_blank"
-        style={{
-          alignSelf: 'flex-end',
-          width: 'max-content',
-          marginBlockStart: '1em',
-        }}
-      >
-        <Button
-          variant="subtle"
-          color="gray"
-          leftIcon={<FaGithub />}
-        >
-          Repositorio
-        </Button>
-      </Anchor>
+      <Text size="xl" weight="bold" className={classes.toolTitle}>
+        {title}
+      </Text>
 
-      <Anchor
-        to={route}
-        component={Link}
-        style={{
-          alignSelf: 'flex-end',
-          width: 'max-content',
-          marginBlockStart: '1em',
-        }}
-      >
-        <Button
-          variant="filled"
-          color="orange"
-          leftIcon={<MdArrowForward />}
-        >
-          Empezar
-        </Button>
-      </Anchor>
-    </Group>
+      <Text>{description}</Text>
 
-  </Grid.Col>
-);
+      <Group noWrap className={classes.buttonGroup}>
+
+        <Anchor href={`${baseURL}${repository}`} target="_blank" className={classes.button}>
+          <Button variant="light" color="gray" leftIcon={<FaGithub />}>
+            Repositorio
+          </Button>
+        </Anchor>
+
+        <Anchor to={route} component={Link} className={classes.button}>
+          <Button variant="filled" color="orange" rightIcon={<MdArrowForward />}>
+            Empezar
+          </Button>
+        </Anchor>
+
+      </Group>
+    </Box>
+  );
+};
 
 export default ToolCard;

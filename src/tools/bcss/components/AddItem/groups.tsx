@@ -1,4 +1,4 @@
-import { Chips, Chip } from '@mantine/core';
+import { Chips, Chip, createStyles } from '@mantine/core';
 import { Dispatch, SetStateAction } from 'react';
 import accounts from '~/data/accounts.json';
 
@@ -9,28 +9,41 @@ type GroupsProps = {
   defaultValue: string;
 }
 
-const Groups = ({ onChange, defaultValue }: GroupsProps) => (
-  <Chips
-    color="orange"
-    sx={(theme) => ({
-      justifyContent: 'center',
-      backgroundColor: theme.colors.dark[8],
-      padding: '2em',
-      borderRadius: '1em',
-    })}
-    multiple={false}
-    onChange={onChange}
-    defaultValue={defaultValue}
-  >
-    {accountGroups.map((group) => (
-      <Chip
-        value={group}
-        key={group}
-      >
-        {group}
-      </Chip>
-    ))}
-  </Chips>
-);
+const useStyles = createStyles((theme) => ({
+  container: {
+    justifyContent: 'center',
+    backgroundColor: theme.colors.dark[8],
+    padding: '2em',
+    borderRadius: '1em',
+    width: '85%',
+
+    [`@media (max-width: ${theme.breakpoints.xs}px)`]: {
+      width: '90%',
+    },
+  },
+}));
+
+const Groups = ({ onChange, defaultValue }: GroupsProps) => {
+  const { classes } = useStyles();
+
+  return (
+    <Chips
+      color="orange"
+      className={classes.container}
+      multiple={false}
+      onChange={onChange}
+      defaultValue={defaultValue}
+    >
+      {accountGroups.map((group) => (
+        <Chip
+          value={group}
+          key={group}
+        >
+          {group}
+        </Chip>
+      ))}
+    </Chips>
+  );
+};
 
 export default Groups;

@@ -1,46 +1,54 @@
 import {
   Box,
+  createStyles,
   Text,
   Title,
 } from '@mantine/core';
 import { MdBolt } from 'react-icons/md';
 import Tools from '@/Tools';
 
-const Hero = () => (
-  <Box
-    style={{
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'space-around',
-      alignItems: 'center',
-    }}
-  >
-    <Title
-      order={1}
-      sx={(theme) => ({
-        display: 'flex',
-        color: theme.colors.orange[6],
-      })}
-    >
-      Fastic
-      <MdBolt style={{
-        alignSelf: 'center',
-      }}
-      />
-    </Title>
+const useStyles = createStyles((theme) => ({
+  container: {
+    marginBlockStart: '2em',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    textAlign: 'center',
+  },
 
-    <Text
-      size="lg"
-      style={{
-        alignSelf: 'center',
-        marginBlockEnd: '2em',
-      }}
-    >
-      Proveemos herramientas para facilitar tu flujo de trabajo.
-    </Text>
+  fastic: {
+    display: 'flex',
+    color: theme.colors.orange[6],
+  },
 
-    <Tools />
-  </Box>
-);
+  description: {
+    alignSelf: 'center',
+    marginBlockEnd: '2em',
+  },
+}));
+
+const Hero = () => {
+  const { classes } = useStyles();
+
+  return (
+    <Box className={classes.container}>
+
+      <Title order={1} className={classes.fastic}>
+        Fastic
+        <MdBolt style={{
+          alignSelf: 'center',
+        }}
+        />
+      </Title>
+
+      <Text size="lg" className={classes.description}>
+        Proveemos herramientas para facilitar tu flujo de trabajo.
+      </Text>
+
+      <Tools />
+    </Box>
+  );
+};
 
 export default Hero;
