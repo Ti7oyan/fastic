@@ -6,7 +6,6 @@ const useStyles = createStyles(() => ({
   container: {
     display: 'flex',
     minHeight: '100vh',
-    overflow: 'scroll',
     alignItems: 'center',
     justifyContent: 'center',
   },
