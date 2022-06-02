@@ -11,12 +11,11 @@ import accounts from '~/data/accounts.json';
 
 // Types and interfaces
 import IAccount from '~/types/account';
-import ItemType from '$/bcss/types/item';
 
 // Components and validation schema
 import Groups from './groups';
 import NumberField from './number';
-import CreateAccount from './create';
+import AutocompleteField from './autocomplete';
 import schema from './schema';
 
 // Utils
@@ -24,17 +23,11 @@ import { parseName } from '$/bcss/utils/parseCode';
 import { ItemsContext } from '$/bcss';
 import createItem from '$/bcss/utils/createItem';
 import filterGroups from '$/bcss/utils/filterGroups';
-import AutocompleteField from './autocomplete';
 
 type FormData = {
   accountName: string;
   debts: number;
   credits: number;
-}
-
-interface FormProps {
-  // eslint-disable-next-line no-unused-vars
-  setItems: (items: ItemType[]) => void;
 }
 
 const useStyles = createStyles(() => ({
@@ -58,12 +51,10 @@ const useStyles = createStyles(() => ({
 
 // This component takes three inputs: the desired account, the debts and the credits and
 // then creates a new item, that is passed to the tool context for further processing.
-const Form = ({ setItems }: FormProps) => {
+const Form = () => {
   const { classes } = useStyles();
 
-  const [openModal, setOpenModal] = useState<boolean>(false);
-
-  const items = useContext(ItemsContext);
+  const { items, saveItems } = useContext(ItemsContext);
 
   // Defining the form, its validation schema and default values.
   const { control, handleSubmit, reset } = useForm<FormData>({
@@ -75,7 +66,7 @@ const Form = ({ setItems }: FormProps) => {
   const onSubmit: SubmitHandler<FormData> = (data) => {
     const account = parseName(data.accountName);
     const newItem = createItem(account, data.debts, data.credits);
-    setItems([...items, newItem]);
+    saveItems([...items, newItem]);
     reset({ accountName: '', credits: 0, debts: 0 });
   };
 
@@ -101,9 +92,6 @@ const Form = ({ setItems }: FormProps) => {
             <AutocompleteField onChange={onChange} value={value} options={options} />
           )}
         />
-
-        <Button onClick={() => setOpenModal(!openModal)}>Crear cuenta</Button>
-        <CreateAccount isOpened={openModal} setOpened={setOpenModal} />
 
         <Group className={classes.numberGroup}>
           <Controller
