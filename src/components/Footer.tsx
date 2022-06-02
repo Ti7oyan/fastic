@@ -23,12 +23,8 @@ const Footer = () => {
   const { classes } = useStyles();
 
   return (
-    <Box
-      className={classes.footer}
-    >
-      <Text
-        className={classes.fastic}
-      >
+    <Box className={classes.footer}>
+      <Text className={classes.fastic}>
         Fastic
         <MdBolt style={{
           alignSelf: 'center',
@@ -36,9 +32,7 @@ const Footer = () => {
         />
       </Text>
 
-      <Text
-        color="gray"
-      >
+      <Text color="gray">
         - Ticiano Morvan
       </Text>
     </Box>
